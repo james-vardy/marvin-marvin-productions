@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "professional_details",
+  "info": {
+    "singularName": "professional-detail",
+    "pluralName": "professional-details",
+    "displayName": "Professional Details"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "instagramLink": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "portrait": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
