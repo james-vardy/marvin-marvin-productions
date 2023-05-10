@@ -15,7 +15,7 @@ export default function NavBar() {
     <nav>
       <div className="grid">
         <div className="row-auto">
-          <div className="justify-between items-center px-12 py-12 flex md:justify-center ">
+          <div className="justify-between items-center px-8 py-8 flex md:justify-center ">
             <div className="px-2">
               <h1 className="text-2xl md:text-4xl">
                 <Link href={"/"}>MarvinMarvin Productions</Link>
@@ -30,7 +30,7 @@ export default function NavBar() {
               ></FontAwesomeIcon>
             </div>
 
-            <div className="hidden px-2 md:flex text-xl">
+            <div className="hidden px-2 md:flex text-xl lg:mx-24">
               <Link href={"/works"} className="px-4 py-4">
                 Works
               </Link>
