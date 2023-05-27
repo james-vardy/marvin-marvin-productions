@@ -33,15 +33,18 @@ export default async function Home() {
   const selectedWorks: selectedWorksPopulated = await getSelectedWorks();
 
   return (
-    <main>
-      <div className="flex flex-wrap justify-center px-4 ml-8 mr-8 transition-all">
+    <main className="">
+      <div className="flex flex-wrap justify-center">
         {selectedWorks.data.map((selectedWork, key) => (
-          <a href={selectedWork.attributes.streamingLink} target="_blank">
+          <a
+            href={selectedWork.attributes.streamingLink}
+            target="_blank"
+            key={key}
+          >
             <Image
-              key={key}
               src={`http://localhost:1337${selectedWork.attributes.coverImage.data.attributes.formats.small.url}`}
-              height={400}
-              width={400}
+              height={300}
+              width={300}
               className="px-2 py-2"
               alt={
                 selectedWork.attributes.coverImage.data.attributes
