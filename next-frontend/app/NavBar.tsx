@@ -7,18 +7,36 @@ import { useState } from "react";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-export default function NavBar() {
+async function getProfessionalDetails() {
+  const res = await fetch(
+    "http://localhost:1337/api/professional-detail?populate=*"
+  );
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function NavBar() {
   const [click, setClick] = useState(false);
   const changeClick = () => setClick(!click);
+
+  const professionalDetails: professionalDetails =
+    await getProfessionalDetails();
 
   return (
     <nav>
       <div className="grid">
         <div className="row-auto">
-          <div className="justify-between items-center px-8 py-8 flex md:justify-center ">
+          <div className="justify-between items-center px-8 py-8 mx-4 my-4 flex md:justify-center ">
             <div className="px-2">
               <h1 className="text-2xl md:text-4xl">
-                <Link href={"/"}>MarvinMarvin Productions</Link>
+                <Link href={"/"} className="capitalize">
+                  MarvinMarvin Productions
+                </Link>
               </h1>
             </div>
 
@@ -37,7 +55,11 @@ export default function NavBar() {
               <Link href={"/contact"} className="px-4 py-4">
                 Contact
               </Link>
-              <Link href={"https://www.instagram.com"} className="px-4 py-4">
+              <Link
+                href={professionalDetails.data.attributes.instagramLink}
+                className="px-4 py-4"
+                target="_blank"
+              >
                 <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
               </Link>
             </div>

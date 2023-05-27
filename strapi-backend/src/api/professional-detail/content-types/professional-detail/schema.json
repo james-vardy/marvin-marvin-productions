@@ -4,7 +4,8 @@
   "info": {
     "singularName": "professional-detail",
     "pluralName": "professional-details",
-    "displayName": "Professional Details"
+    "displayName": "Professional Details",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,6 +28,17 @@
       "type": "string"
     },
     "portrait": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "homePagePictures": {
       "allowedTypes": [
         "images",
         "files",
@@ -34,7 +46,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": true
     }
   }
 }

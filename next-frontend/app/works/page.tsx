@@ -25,49 +25,59 @@ export default async function Works() {
   const selectedWorks: selectedWorksPopulated = await getSelectedWorks();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
+    <main>
+      <div className="flex justify-center">
         <table className="table-auto border-separate border-spacing-2 border border-slate-400 px-2 py-2">
-          {/* <thead>
-            <tr>
-              <th className="border border-slate-300 px-2 py-2">Song</th>
-              <th className="border border-slate-300 px-2 py-2">Artist</th>
-              <th className="border border-slate-300 px-2 py-2">
-                Release Date
-              </th>
-              <th className="border border-slate-300 px-2 py-2">
-                Streaming Link
-              </th>
-            </tr>
-          </thead> */}
           <tbody>
             {selectedWorks.data.map((selectedWork, key) => (
               <tr key={key}>
                 <td className="border border-slate-300 px-2 py-2">
-                  <div className="flex">
+                  <div className="flex items-center">
                     <Image
                       src={`http://localhost:1337${selectedWork.attributes.coverImage.data.attributes.formats.small.url}`}
-                      height={100}
-                      width={100}
+                      height={200}
+                      width={200}
                       alt={
                         selectedWork.attributes.coverImage.data.attributes
                           .alternativeText
                       }
                     ></Image>
-                    <div className="flex flex-col px-2 py-2 align-middle justify-center text-center">
-                      {" "}
-                      {selectedWork.attributes.trackName}
+                    <div className="flex flex-col px-2 py-2 align-middle justify-center text-center lg:flex-row">
+                      <div className="lg:px-2">
+                        <p className="text-lg">
+                          {selectedWork.attributes.trackName}
+                        </p>
+                      </div>
                       <a
+                        className="lg:px-2"
                         href={selectedWork.attributes.spotifyLink}
                         target="_blank"
                       >
-                        {" "}
-                        {selectedWork.attributes.artistName}{" "}
+                        <p className="text-lg">
+                          {selectedWork.attributes.artistName}
+                        </p>
                       </a>
-                      {selectedWork.attributes.releaseDate}{" "}
+
+                      <div className="lg:px-2">
+                        <p className="text-lg">
+                          {selectedWork.attributes.releaseDate}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </td>
+                {/* <td className="hidden border border-slate-300 px-2 py-2 md:flex">
+                  <audio
+                    controls
+                    src={`http://localhost:1337${selectedWork.attributes.trackFile.data.attributes.url}`}
+                  >
+                    <a
+                      href={`http://localhost:1337${selectedWork.attributes.trackFile.data.attributes.url}`}
+                    >
+                      Download audio
+                    </a>
+                  </audio>
+                </td> */}
                 <td className="border border-slate-300 px-2 py-2">
                   <div className="flex flex-row justify-evenly">
                     <a
