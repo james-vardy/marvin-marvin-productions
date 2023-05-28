@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useState } from "react";
 
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
@@ -44,16 +43,8 @@ export default function NavBar() {
         </div>
 
         <div className="flex items-center mx-4 my-4">
-          <div className="justify-end md:hidden hover:cursor-pointer">
-            <FontAwesomeIcon
-              onClick={changeClick}
-              icon={click ? faTimes : faBars}
-              size="2x"
-            ></FontAwesomeIcon>
-          </div>
-
-          <div className="hidden md:flex text-xl lg:mx-24">
-            <Link href={"/works"} className="px-5">
+          <div className="flex text-xl lg:mx-24">
+            <Link href={"/works"} className="px-2 md:px-5">
               Works
             </Link>
             <Link
@@ -70,21 +61,6 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             </Link>
           </div>
-        </div>
-
-        <div className={click ? "grid md:hidden justify-center" : "hidden"}>
-          <Link
-            href={"/works"}
-            className="inline-block align-middle text-center"
-          >
-            Works
-          </Link>
-          <Link
-            href={"/contact"}
-            className="inline-block align-middle text-center"
-          >
-            Contact
-          </Link>
         </div>
       </div>
     </nav>
