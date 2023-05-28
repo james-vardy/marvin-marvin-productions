@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 async function getProfessionalDetails() {
   const res = await fetch(
-    "http://localhost:1337/api/professional-detail?populate=*"
+    "https://edit.marvinmarvinproductions.com/api/professional-detail?populate=*"
   );
 
   if (!res.ok) {

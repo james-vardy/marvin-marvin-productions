@@ -2,7 +2,7 @@ import Image from "next/image";
 
 async function getProfessionalDetails() {
   const res = await fetch(
-    "http://localhost:1337/api/professional-detail?populate=*"
+    "https://edit.marvinmarvinproductions.com/api/professional-detail?populate=*"
   );
 
   if (!res.ok) {
@@ -15,7 +15,7 @@ async function getProfessionalDetails() {
 
 async function getSelectedWorks() {
   const res = await fetch(
-    "http://localhost:1337/api/selected-works?populate=*"
+    "https://edit.marvinmarvinproductions.com/api/selected-works?populate=*"
   );
 
   if (!res.ok) {
@@ -42,7 +42,7 @@ export default async function Home() {
             key={key}
           >
             <Image
-              src={`http://localhost:1337${selectedWork.attributes.coverImage.data.attributes.formats.small.url}`}
+              src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.formats.small.url}`}
               height={300}
               width={300}
               className="px-2 py-2"

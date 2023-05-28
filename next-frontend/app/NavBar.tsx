@@ -9,7 +9,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 async function getProfessionalDetails() {
   const res = await fetch(
-    "http://localhost:1337/api/professional-detail?populate=*"
+    "https://edit.marvinmarvinproductions.com/api/professional-detail?populate=*"
   );
 
   if (!res.ok) {

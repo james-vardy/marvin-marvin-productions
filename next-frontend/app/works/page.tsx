@@ -10,7 +10,7 @@ import Image from "next/image";
 
 async function getSelectedWorks() {
   const res = await fetch(
-    "http://localhost:1337/api/selected-works?populate=*"
+    "https://edit.marvinmarvinproductions.com/api/selected-works?populate=*"
   );
 
   if (!res.ok) {
@@ -34,7 +34,7 @@ export default async function Works() {
                 <td className="border border-slate-300 px-2 py-2">
                   <div className="flex items-center">
                     <Image
-                      src={`http://localhost:1337${selectedWork.attributes.coverImage.data.attributes.formats.small.url}`}
+                      src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.formats.small.url}`}
                       height={200}
                       width={200}
                       alt={
@@ -69,10 +69,10 @@ export default async function Works() {
                 {/* <td className="hidden border border-slate-300 px-2 py-2 md:flex">
                   <audio
                     controls
-                    src={`http://localhost:1337${selectedWork.attributes.trackFile.data.attributes.url}`}
+                    src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.trackFile.data.attributes.url}`}
                   >
                     <a
-                      href={`http://localhost:1337${selectedWork.attributes.trackFile.data.attributes.url}`}
+                      href={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.trackFile.data.attributes.url}`}
                     >
                       Download audio
                     </a>
