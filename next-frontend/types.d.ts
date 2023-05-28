@@ -17,6 +17,7 @@ type selectedWorks = {
         youtubeLink: string;
         soundCloudLink: string;
         tidalLink: string;
+        description: string;
       };
     }
   ];
@@ -49,6 +50,7 @@ type selectedWorksPopulated = {
         youtubeLink: string;
         soundCloudLink: string;
         tidalLink: string;
+        description: string;
         coverImage: {
           data: {
             id: number;
