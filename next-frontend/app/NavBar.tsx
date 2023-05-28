@@ -44,7 +44,7 @@ export default function NavBar() {
 
         <div className="flex items-center mx-4 my-4">
           <div className="flex text-xl lg:mx-24">
-            <Link href={"/works"} className="px-2 md:px-5">
+            <Link href={"/works"} className="px-2 md:px-5 hidden md:block">
               Works
             </Link>
             <Link

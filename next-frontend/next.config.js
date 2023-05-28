@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "localhost",
+        hostname: "edit.marvinmarvinproductions.com",
       },
     ],
   },
