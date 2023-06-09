@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lora.className}>
-        <main className="h-screen bg-slate-50">
+        <main className="">
           <div className="flex flex-col justify-center px-8 sm:px-32 2xl:px-64">
             <NavBar></NavBar>
             {children}
