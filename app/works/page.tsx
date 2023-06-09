@@ -10,7 +10,7 @@ import Image from "next/image";
 
 async function getSelectedWorks() {
   const res = await fetch(
-    "https://edit.marvinmarvinproductions.com/api/selected-works?populate=*"
+    "https://edit.marvinmarvinproductions.com/api/selected-works?populate=*&sort=releaseDate:desc"
   );
 
   if (!res.ok) {
