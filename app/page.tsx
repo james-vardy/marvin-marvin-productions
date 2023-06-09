@@ -36,12 +36,8 @@ export default async function Home() {
     <main className="">
       <div className="flex flex-wrap justify-center">
         {selectedWorks.data.map((selectedWork, key) => (
-          <div className="relative h-80 w-80">
-            <a
-              href={selectedWork.attributes.streamingLink}
-              target="_blank"
-              key={key}
-            >
+          <div className="relative h-80 w-80" key={key}>
+            <a href={selectedWork.attributes.streamingLink} target="_blank">
               <Image
                 src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.url}`}
                 fill={true}
