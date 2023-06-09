@@ -10,7 +10,7 @@ import NavBar from "./NavBar";
 config.autoAddCss = false;
 
 export const metadata = {
-  title: "MarvinMarvin Production",
+  title: "MarvinMarvin Productions",
   description: "MarvinMarvin Portfolio Site",
 };
 
