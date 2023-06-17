@@ -1,7 +1,10 @@
 import "./globals.css";
-import { Lora } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 
-const lora = Lora({ weight: "400", subsets: ["latin"] });
+const font = Space_Mono({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -21,9 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={lora.className}>
-        <main className="">
-          <div className="flex flex-col justify-center px-8 sm:px-32 2xl:px-64">
+      <body>
+        <main className={`bg-slate-100 ${font.className}`}>
+          <div className="flex flex-col justify-center px-8 md:px-32 2xl:px-64">
             <NavBar></NavBar>
             {children}
           </div>
