@@ -35,15 +35,16 @@ export default async function Works() {
                   <td className="border border-slate-300 px-2 py-2">
                     <div className="flex flex-col md:flex-row">
                       <div className="flex justify-center px-4 py-4 md:px-0 md:py-0">
-                        <Image
-                          src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.url}`}
-                          height={200}
-                          width={200}
-                          alt={
-                            selectedWork.attributes.coverImage.data.attributes
-                              .alternativeText
-                          }
-                        ></Image>
+                        <div className="relative h-40 w-40 lg:h-60 lg:w-60">
+                          <Image
+                            src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.url}`}
+                            fill={true}
+                            alt={
+                              selectedWork.attributes.coverImage.data.attributes
+                                .alternativeText
+                            }
+                          ></Image>
+                        </div>
                       </div>
                       <div className="flex-grow">
                         <div className="flex flex-col px-2 py-2 mx-5 md:mx-10 lg:mx-40 text-xs md:text-sm lg:text-lg text-center">
