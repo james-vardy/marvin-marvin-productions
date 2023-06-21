@@ -1,7 +1,7 @@
 import "./globals.css";
-import { Space_Mono } from "next/font/google";
+import { VT323 } from "next/font/google";
 
-const font = Space_Mono({
+const font = VT323({
   weight: "400",
   subsets: ["latin"],
 });
