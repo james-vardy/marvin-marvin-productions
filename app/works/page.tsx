@@ -33,8 +33,8 @@ export default async function Works() {
               selectedWork.attributes.highlighted ? (
                 <tr key={key}>
                   <td className="border border-slate-300 px-2 py-2">
-                    <div className="flex flex-col md:flex-row">
-                      <div className="flex justify-center px-4 py-4 md:px-0 md:py-0">
+                    <div className="flex flex-col lg:flex-row">
+                      <div className="flex justify-center items-center px-4 py-4 md:px-0 md:py-0">
                         <div className="relative h-40 w-40 lg:h-60 lg:w-60">
                           <Image
                             src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.url}`}
@@ -47,7 +47,7 @@ export default async function Works() {
                         </div>
                       </div>
                       <div className="flex-grow">
-                        <div className="flex flex-col px-2 py-2 mx-5 md:mx-10 lg:mx-40 text-xs md:text-sm lg:text-lg text-center">
+                        <div className="flex flex-col px-2 py-2 mx-5 md:mx-10 text-sm md:text-base lg:text-lg text-center">
                           <a
                             href={selectedWork.attributes.spotifyLink}
                             target="_blank"
@@ -73,6 +73,43 @@ export default async function Works() {
                               {selectedWork.attributes.description ??
                                 "example description"}
                             </p>
+                          </div>
+
+                          <div className="flex md:hidden flex-row justify-center px-2 py-2 text-center">
+                            <a
+                              className="px-2 py-2"
+                              href={selectedWork.attributes.spotifyLink}
+                              target="_blank"
+                            >
+                              <FontAwesomeIcon
+                                icon={faSpotify}
+                              ></FontAwesomeIcon>
+                            </a>
+                            <a
+                              className="px-2 py-2"
+                              href={selectedWork.attributes.appleMusicLink}
+                              target="_blank"
+                            >
+                              <FontAwesomeIcon icon={faApple}></FontAwesomeIcon>
+                            </a>
+                            <a
+                              className="px-2 py-2"
+                              href={selectedWork.attributes.youtubeLink}
+                              target="_blank"
+                            >
+                              <FontAwesomeIcon
+                                icon={faYoutube}
+                              ></FontAwesomeIcon>
+                            </a>
+                            <a
+                              className="px-2 py-2"
+                              href={selectedWork.attributes.soundCloudLink}
+                              target="_blank"
+                            >
+                              <FontAwesomeIcon
+                                icon={faSoundcloud}
+                              ></FontAwesomeIcon>
+                            </a>
                           </div>
                         </div>
                       </div>

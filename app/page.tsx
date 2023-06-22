@@ -36,7 +36,7 @@ export default async function Home() {
               </a>
             </div>
 
-            <p className="self-center text-xs mb-4">
+            <p className="self-center mb-4 text-lg">
               {selectedWork.attributes.evanRole ?? "Add credits x"}
             </p>
           </div>
