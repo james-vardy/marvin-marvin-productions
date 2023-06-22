@@ -6,6 +6,7 @@ type selectedWorks = {
         trackName: string;
         releaseDate: string;
         artistName: string;
+        evanRole: string;
         createdAt: Date;
         updatedAt: Date;
         publishedAt: Date;
@@ -39,6 +40,7 @@ type selectedWorksPopulated = {
         trackName: string;
         releaseDate: string;
         artistName: string;
+        evanRole: string;
         createdAt: Date;
         updatedAt: Date;
         publishedAt: Date;
