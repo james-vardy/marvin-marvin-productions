@@ -3,7 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  output: "export",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         hostname: "edit.marvinmarvinproductions.com",
