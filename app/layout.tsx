@@ -1,10 +1,7 @@
 import "./globals.css";
-import { VT323 } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const font = VT323({
-  weight: "400",
-  subsets: ["latin"],
-});
+const font = Inter({ subsets: ["latin"] });
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
