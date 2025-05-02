@@ -4,14 +4,14 @@ import { Inter } from "next/font/google";
 const font = Inter({ subsets: ["latin"] });
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import NavBar from "./NavBar";
 config.autoAddCss = false;
 
 export const metadata = {
   title: "Evan J. Martin Productions",
-  description: "Evan J. Martin Productions Portfolio Site"
+  description: "Evan J. Martin Productions Portfolio Site",
 };
 
 export default function RootLayout({
@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SpeedInsights />
         <main className={`bg-slate-100 ${font.className}`}>
           <div className="flex flex-col justify-center px-8 md:px-32 2xl:px-64">
             <NavBar></NavBar>
