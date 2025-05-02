@@ -26,7 +26,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </Link>
             <Link
-              href={"https://www.instagram.com/marvinmarvinproductions/"}
+              href={"https://www.instagram.com/evanjmartinproductions/"}
               className="px-5"
               target="_blank"
             >

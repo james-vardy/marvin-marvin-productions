@@ -11,7 +11,7 @@ config.autoAddCss = false;
 
 export const metadata = {
   title: "Evan J. Martin Productions",
-  description: "Evan J. Martin Productions Portfolio Site",
+  description: "Evan J. Martin Productions Portfolio Site"
 };
 
 export default function RootLayout({
