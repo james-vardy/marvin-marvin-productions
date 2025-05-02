@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
@@ -26,7 +26,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </Link>
             <Link
-              href={"https://www.instagram.com/marvinmarvinproductions/"}
+              href={"https://www.instagram.com/evanjmartinproductions/"}
               className="px-5"
               target="_blank"
             >
