@@ -7,7 +7,7 @@ export default function WorkCard({ work }: { work: Track }) {
       href={work.streamingLink}
       target="_blank"
       rel="noreferrer"
-      className="block bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
+      className="block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:shadow-2xl hover:scale-105 hover:bg-indigo-50"
     >
       {/* ensure a perfect square cover */}
       <div className="relative w-full aspect-square overflow-hidden">

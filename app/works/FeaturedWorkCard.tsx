@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function FeaturedWorkCard({ work }: { work: Track }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:shadow-2xl hover:scale-105 hover:bg-indigo-50">
       {/* ensure a perfect square cover */}
       <div className="relative w-full aspect-square overflow-hidden">
         <Image
@@ -30,7 +30,7 @@ export default function FeaturedWorkCard({ work }: { work: Track }) {
         <p className="text-sm text-gray-700 mb-4">
           {work.description ?? "No description provided"}
         </p>
-        <div className="flex space-x-4 text-2xl text-indigo-600">
+        <div className="flex space-x-4 text-2xl text-slate-600">
           {work.spotifyLink && (
             <a href={work.spotifyLink} target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faSpotify} />
