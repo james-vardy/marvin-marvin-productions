@@ -17,8 +17,9 @@ async function getProfessionalDetails() {
 }
 
 export default async function Contact() {
-  const professionalDetails: professionalDetails =
-    await getProfessionalDetails();
+  const professionalDetails: {
+    data: { attributes: { name: string; emailAddress: string } };
+  } = await getProfessionalDetails();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

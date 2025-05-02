@@ -13,8 +13,8 @@ import NavBar from "./NavBar";
 config.autoAddCss = false;
 
 export const metadata = {
-  title: "MarvinMarvin Productions",
-  description: "MarvinMarvin Portfolio Site",
+  title: "Evan J. Martin Productions",
+  description: "Evan J. Martin Productions Portfolio Site",
 };
 
 export default function RootLayout({

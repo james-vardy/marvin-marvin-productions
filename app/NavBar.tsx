@@ -10,7 +10,7 @@ export default function NavBar() {
       <div className="flex py-4 flex-col justify-center items-center lg:flex-row lg:py-8">
         <div className="justify-between items-center flex py-4">
           <h1 className="text-6xl text-center lg:text-left">
-            <Link href={"/"}>MarvinMarvin Productions</Link>
+            <Link href={"/"}>Evan J. Martin Productions</Link>
           </h1>
         </div>
 
@@ -20,7 +20,7 @@ export default function NavBar() {
               Works
             </Link>
             <Link
-              href={"mailto:marvinmarvinproductions@gmail.com"}
+              href={"mailto:evanjmartinproductions@gmail.com"}
               className="px-5"
             >
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>

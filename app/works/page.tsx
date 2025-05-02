@@ -1,3 +1,4 @@
+import { APIResponse } from "@/types";
 import {
   faSpotify,
   faApple,
@@ -22,7 +23,7 @@ async function getSelectedWorks() {
 }
 
 export default async function Works() {
-  const selectedWorks: selectedWorksPopulated = await getSelectedWorks();
+  const selectedWorks: APIResponse = await getSelectedWorks();
 
   return (
     <main>
@@ -30,18 +31,19 @@ export default async function Works() {
         <table className="table-auto border-separate border-spacing-2 border border-slate-400">
           <tbody>
             {selectedWorks.data.map((selectedWork, key) =>
-              selectedWork.attributes.highlighted ? (
+              selectedWork.highlighted ? (
                 <tr key={key}>
                   <td className="border border-slate-300 px-2 py-2">
                     <div className="flex flex-col lg:flex-row">
                       <div className="flex justify-center items-center px-4 py-4 md:px-0 md:py-0">
                         <div className="relative h-40 w-40 lg:h-60 lg:w-60">
                           <Image
-                            src={`https://edit.marvinmarvinproductions.com${selectedWork.attributes.coverImage.data.attributes.url}`}
+                            src={`https://edit.marvinmarvinproductions.com${selectedWork.coverImage.url}`}
                             fill={true}
                             alt={
-                              selectedWork.attributes.coverImage.data.attributes
-                                .alternativeText
+                              selectedWork.coverImage.alternativeText
+                                ? selectedWork.coverImage.alternativeText
+                                : "no alt text provided"
                             }
                           ></Image>
                         </div>
@@ -49,36 +51,34 @@ export default async function Works() {
                       <div className="flex-grow">
                         <div className="flex flex-col px-2 py-2 mx-5 md:mx-10 text-sm md:text-base lg:text-lg text-center">
                           <a
-                            href={selectedWork.attributes.spotifyLink}
+                            href={selectedWork.spotifyLink ?? "#"}
                             target="_blank"
                           >
                             <h2>
                               <b>
-                                {selectedWork.attributes.trackName} -{" "}
-                                {selectedWork.attributes.artistName}
+                                {selectedWork.trackName} -{" "}
+                                {selectedWork.artistName}
                               </b>
                             </h2>
                           </a>
 
                           <div className="text-xs">
                             <h3>
-                              <i>
-                                Released: {selectedWork.attributes.releaseDate}
-                              </i>
+                              <i>Released: {selectedWork.releaseDate}</i>
                             </h3>
                           </div>
 
                           <div className="mt-2">
                             <p>
-                              {selectedWork.attributes.description ??
-                                "example description"}
+                              {selectedWork.description ??
+                                "no description provided"}
                             </p>
                           </div>
 
                           <div className="flex md:hidden flex-row justify-center px-2 py-2 text-center">
                             <a
                               className="px-2 py-2"
-                              href={selectedWork.attributes.spotifyLink}
+                              href={selectedWork.spotifyLink ?? "#"}
                               target="_blank"
                             >
                               <FontAwesomeIcon
@@ -87,14 +87,14 @@ export default async function Works() {
                             </a>
                             <a
                               className="px-2 py-2"
-                              href={selectedWork.attributes.appleMusicLink}
+                              href={selectedWork.appleMusicLink ?? "#"}
                               target="_blank"
                             >
                               <FontAwesomeIcon icon={faApple}></FontAwesomeIcon>
                             </a>
                             <a
                               className="px-2 py-2"
-                              href={selectedWork.attributes.youtubeLink}
+                              href={selectedWork.youtubeLink ?? "#"}
                               target="_blank"
                             >
                               <FontAwesomeIcon
@@ -103,7 +103,7 @@ export default async function Works() {
                             </a>
                             <a
                               className="px-2 py-2"
-                              href={selectedWork.attributes.soundCloudLink}
+                              href={selectedWork.soundCloudLink ?? "#"}
                               target="_blank"
                             >
                               <FontAwesomeIcon
@@ -119,28 +119,28 @@ export default async function Works() {
                     <div className="flex flex-col justify text-center">
                       <a
                         className="px-2 py-2"
-                        href={selectedWork.attributes.spotifyLink}
+                        href={selectedWork.spotifyLink ?? "#"}
                         target="_blank"
                       >
                         <FontAwesomeIcon icon={faSpotify}></FontAwesomeIcon>
                       </a>
                       <a
                         className="px-2 py-2"
-                        href={selectedWork.attributes.appleMusicLink}
+                        href={selectedWork.appleMusicLink ?? "#"}
                         target="_blank"
                       >
                         <FontAwesomeIcon icon={faApple}></FontAwesomeIcon>
                       </a>
                       <a
                         className="px-2 py-2"
-                        href={selectedWork.attributes.youtubeLink}
+                        href={selectedWork.youtubeLink ?? "#"}
                         target="_blank"
                       >
                         <FontAwesomeIcon icon={faYoutube}></FontAwesomeIcon>
                       </a>
                       <a
                         className="px-2 py-2"
-                        href={selectedWork.attributes.soundCloudLink}
+                        href={selectedWork.soundCloudLink ?? "#"}
                         target="_blank"
                       >
                         <FontAwesomeIcon icon={faSoundcloud}></FontAwesomeIcon>
