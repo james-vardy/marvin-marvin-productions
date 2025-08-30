@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const font = Inter({ subsets: ["latin"] });
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import NavBar from "@/components/NavBar";
 config.autoAddCss = false;
@@ -23,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-gray-50 ${font.className}`}>
-        <SpeedInsights />
         <div className="min-h-screen flex flex-col">
           <NavBar />
           <div className="flex-1">{children}</div>
