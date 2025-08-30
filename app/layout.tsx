@@ -11,7 +11,7 @@ config.autoAddCss = false;
 
 export const metadata = {
   title: "Evan J. Martin Productions",
-  description: "Evan J. Martin Productions Portfolio Site",
+  description: "Professional music production services from South Leeds and Eiger Studios. Working with artists across all budgets to create exceptional music.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={`bg-gray-50 ${font.className}`}>
         <div className="min-h-screen flex flex-col">
           <NavBar />
