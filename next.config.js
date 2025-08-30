@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         hostname: "edit.marvinmarvinproductions.com",
+      },
+      {
+        hostname: "pocketbase-production-1aa6.up.railway.app",
       },
     ],
   },
