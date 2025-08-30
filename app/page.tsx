@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Track } from "@/src/types";
 import { useState, useEffect } from "react";
