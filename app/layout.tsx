@@ -12,10 +12,12 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import NavBar from "@/components/NavBar";
 config.autoAddCss = false;
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Evan J. Martin Productions",
   description:
-    "Professional music production services from South Leeds and Eiger Studios. Working with artists across all budgets to create exceptional music.",
+    "Professional music production services based in Leeds. Working with artists across all budgets to create exceptional music.",
 };
 
 export default function RootLayout({
