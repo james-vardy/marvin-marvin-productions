@@ -1,21 +1,58 @@
+'use client';
+
 import { Track } from "@/src/types";
+import { useState, useEffect } from "react";
 import WorkCard from "@/components/WorkCard";
 import { getSelectedWorks } from "@/src/lib/pocketbase";
 
-export default async function Home() {
-  let tracks: Track[] = [];
+export default function Home() {
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  try {
-    tracks = await getSelectedWorks();
-  } catch (error) {
-    console.error("Failed to fetch from PocketBase:", error);
-  }
+  useEffect(() => {
+    async function fetchTracks() {
+      try {
+        const fetchedTracks = await getSelectedWorks();
+        setTracks(fetchedTracks);
+      } catch (err) {
+        console.error("Failed to fetch from PocketBase:", err);
+        setError("Failed to load tracks. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchTracks();
+  }, []);
 
   // Filter tracks that have streaming links
   const worksWithStream = tracks.filter(
     (w: Track) =>
       w.spotifyLink || w.appleMusicLink || w.youtubeLink || w.soundCloudLink
   );
+
+  if (loading) {
+    return (
+      <main className="p-4 max-w-7xl mx-auto">
+        <div className="text-center py-8">
+          <h2 className="text-2xl font-bold mb-4">Loading Portfolio...</h2>
+          <p className="text-gray-600">Fetching tracks from database...</p>
+        </div>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="p-4 max-w-7xl mx-auto">
+        <div className="text-center py-8">
+          <h2 className="text-2xl font-bold mb-4 text-red-600">Error</h2>
+          <p className="text-gray-600">{error}</p>
+        </div>
+      </main>
+    );
+  }
 
   if (worksWithStream.length === 0) {
     return (
