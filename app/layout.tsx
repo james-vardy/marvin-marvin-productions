@@ -9,7 +9,9 @@ const font = Space_Mono({
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/src/components/NavBar";
+import { AudioProvider } from "@/src/contexts/AudioContext";
+import GlobalAudioPlayer from "@/src/components/GlobalAudioPlayer";
 config.autoAddCss = false;
 
 import { Metadata } from "next";
@@ -28,11 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`bg-white ${font.className}`}>
-        <div className="min-h-screen flex flex-col">
-          <NavBar />
-          <div className="flex-1">{children}</div>
-          <SpeedInsights />
-        </div>
+        <AudioProvider>
+          <div className="min-h-screen flex flex-col">
+            <NavBar />
+            <div className="flex-1 pb-20">{children}</div>
+            <GlobalAudioPlayer />
+            <SpeedInsights />
+          </div>
+        </AudioProvider>
       </body>
     </html>
   );

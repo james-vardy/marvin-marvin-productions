@@ -27,6 +27,7 @@ import {
 import Image from "next/image";
 import pb from "@/src/lib/pocketbase";
 import StreamingAudioPlayer from "@/src/components/StreamingAudioPlayer";
+import NewWorkCard from "@/src/components/NewWorkCard";
 
 // Enhanced WorkCard component with expandable descriptions for featured works
 function FeaturedWorkCard({ work }: { work: Track }) {
@@ -451,7 +452,11 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredWorks.map((work: Track) => (
-                <FeaturedWorkCard key={work.id} work={work} />
+                <NewWorkCard
+                  key={work.id}
+                  work={work}
+                  showExpandableDescription={true}
+                />
               ))}
             </div>
           </div>
@@ -482,7 +487,7 @@ export default function Home() {
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {worksWithStream.map((work: Track) => (
-                  <PortfolioWorkCard key={work.id} work={work} />
+                  <NewWorkCard key={work.id} work={work} />
                 ))}
               </div>
               <div className="mt-12 text-center">
