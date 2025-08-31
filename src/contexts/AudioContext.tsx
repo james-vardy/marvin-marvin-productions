@@ -195,6 +195,29 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     }
   }, [state.currentTrack]);
 
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Only handle spacebar if there's a current track and not typing in an input
+      if (event.code === 'Space' && state.currentTrack) {
+        const target = event.target as HTMLElement;
+        const isTyping = target.tagName === 'INPUT' || 
+                        target.tagName === 'TEXTAREA' || 
+                        target.contentEditable === 'true';
+        
+        if (!isTyping) {
+          event.preventDefault();
+          togglePlayPause();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [state.currentTrack, togglePlayPause]);
+
   return (
     <AudioContext.Provider
       value={{
