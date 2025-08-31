@@ -507,60 +507,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-black mb-4">Contact</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Get in touch to discuss your project
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 bg-white rounded-lg shadow-lg border border-gray-200">
-              <FontAwesomeIcon
-                icon={faMusic}
-                className="text-4xl text-black mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-black">
-                Music Production
-              </h3>
-              <p className="text-gray-600">
-                Full track production from concept to final master
-              </p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-lg border border-gray-200">
-              <FontAwesomeIcon
-                icon={faMicrophone}
-                className="text-4xl text-black mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-black">
-                Recording & Mixing
-              </h3>
-              <p className="text-gray-600">
-                Professional recording and mixing services
-              </p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-lg border border-gray-200">
-              <FontAwesomeIcon
-                icon={faGuitar}
-                className="text-4xl text-black mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-black">
-                Session Work
-              </h3>
-              <p className="text-gray-600">
-                Guitar, bass, drums, and other instrumental sessions
-              </p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-lg border border-gray-200">
-              <FontAwesomeIcon
-                icon={faMicrophone}
-                className="text-4xl text-black mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2 text-black">
-                Remote Services
-              </h3>
-              <p className="text-gray-600">
-                Remote mixing and mastering services
-              </p>
-            </div>
           </div>
 
           <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-xl border border-gray-200">
@@ -571,11 +517,8 @@ export default function Home() {
                 </h3>
                 <p className="text-lg text-gray-700 mb-6">
                   Based in Leeds and working from his own studio, and Eiger
-                  Studios for bigger projects, Evan brings professional
-                  production, mixing, and mastering to artists across all
-                  budgets. Whether you're just starting out or ready to take
-                  your music to the next level, let's discuss how we can work
-                  together to bring your vision to life.
+                  Studios for bigger projects, Evan brings unique production,
+                  mixing, and mastering to artists across all budgets.
                 </p>
                 <div className="space-y-4 mb-6">
                   <div className="p-4 bg-gray-50 rounded-lg">
@@ -591,7 +534,7 @@ export default function Home() {
                       >
                         The Hangover Sessions
                       </a>
-                      , offering live session recording and engineering
+                      , offering live location recording and engineering
                       services.
                     </p>
                   </div>
@@ -600,9 +543,16 @@ export default function Home() {
                       House Producer
                     </h4>
                     <p className="text-gray-600">
-                      As the house producer for Private Records, Evan works with
-                      emerging and established artists to create high-quality
-                      productions.
+                      As the house producer for{" "}
+                      <a
+                        href="https://www.privateregcords.co.uk"
+                        target="_blank"
+                        className="text-black hover:text-gray-600 underline font-medium"
+                      >
+                        Private Regcords
+                      </a>
+                      , Evan works with emerging Leeds artists such as Rhiannon
+                      Hope, Normal Village, and more.
                     </p>
                   </div>
                 </div>
@@ -690,7 +640,7 @@ export default function Home() {
             Evan J. Martin Productions
           </h3>
           <p className="text-gray-300 mb-4">
-            Professional Music Production • Leeds
+            Production • Mixing • Mastering • Leeds
           </p>
           <div className="flex justify-center space-x-6">
             <a

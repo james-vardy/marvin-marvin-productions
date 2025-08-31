@@ -98,8 +98,8 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         dispatch({ type: "PAUSE" });
         shouldPlayRef.current = false;
       } else {
-        audioRef.current.play().catch(error => {
-          console.error('Play failed:', error);
+        audioRef.current.play().catch((error) => {
+          console.error("Play failed:", error);
           dispatch({ type: "PAUSE" });
         });
         dispatch({ type: "PLAY" });
@@ -143,8 +143,8 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       // Auto-play if shouldPlay ref is true (for new tracks)
       if (shouldPlayRef.current) {
         shouldPlayRef.current = false;
-        audio.play().catch(error => {
-          console.error('Auto-play failed:', error);
+        audio.play().catch((error) => {
+          console.error("Auto-play failed:", error);
           dispatch({ type: "PAUSE" });
         });
       }
@@ -199,12 +199,13 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       // Only handle spacebar if there's a current track and not typing in an input
-      if (event.code === 'Space' && state.currentTrack) {
+      if (event.code === "Space" && state.currentTrack) {
         const target = event.target as HTMLElement;
-        const isTyping = target.tagName === 'INPUT' || 
-                        target.tagName === 'TEXTAREA' || 
-                        target.contentEditable === 'true';
-        
+        const isTyping =
+          target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.contentEditable === "true";
+
         if (!isTyping) {
           event.preventDefault();
           togglePlayPause();
@@ -212,9 +213,9 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [state.currentTrack, togglePlayPause]);
 
